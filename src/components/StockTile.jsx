@@ -39,7 +39,7 @@ function StockTile({stockName}) {
               
               
             </div>
-            <div className='border-2 border-red-500 grid grid-cols-2 gap-4 '>
+            <div className='border-2 border-red-500 grid grid-cols-2 gap-0 '>
                  {dataStock.length > 0 ?<Volumes volumes={dataStock[0]["indicators"]["quote"][0]["volume"]}></Volumes> : null }
                   
             </div>
