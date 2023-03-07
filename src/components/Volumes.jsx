@@ -4,7 +4,9 @@ function Volumes({volumes}) {
   const [averageVolume,setAverageVolume] = useState(0);
   useEffect(()=>{
    
-    setAverageVolume(volumes.slice(0,volumes.length-1).reduce((a,b)=> a+b,0)/volumes.length-1 );
+    // setAverageVolume(volumes.slice(0,volumes.length-1).reduce((a,b)=> a+b,0)/volumes.length-1 );
+    setAverageVolume(volumes.reduce((a,b)=> a+b,0)/volumes.length-1 );
+
   },[]);
  return (
     <>
@@ -14,7 +16,7 @@ function Volumes({volumes}) {
         <div>{volumes[volumes.length-1]}</div>
         <div className='col-span-2 border-2 border-red-500 items-center justify-center flex'>
         {
-          averageVolume <= volumes[volumes.length-1] 
+          averageVolume <= volumes[volumes.length-1]
           
           ? 
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="green" className="w-6 h-6">
